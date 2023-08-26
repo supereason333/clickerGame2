@@ -12,19 +12,37 @@ namespace clickerGame2
         public Inventory(int slot)
         {
             stored = new Item[slot];
-            for (int i = 0; i <= stored.Length; i++)
+        }
+        public System.Boolean Store(int itemID, int slot)   // dont ask
+        {
+            if (slot <= stored.Length)
             {
-                stored[i] = new Item(0 ,0 ,0 ,0 ,0, 0);
+                stored[slot] = ID.item[itemID];
+                return true;
+            }
+            return false;
+        }
+        public void Remove(int slot)
+        {
+            Store(ID.ItemID.nothing, slot);
+        }
+        public void Clear()
+        {
+            for (int i = 0;  i <= stored.Length; i++)
+            {
+                stored[i] = ID.item[ID.ItemID.nothing];
             }
         }
-        public void Store(int itemID, int slot)
+        public int NextFree()
         {
-            if (slot > stored.Length) return;
-            stored[slot] = itemID;
-        }
-        public void remove(int slot)
-        {
-            stored[slot] = 0;
+            for (int i = 0; i <= stored.Length; i++)
+            {
+                if (stored[i] == ID.item[ID.ItemID.nothing])
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
     }
 }
