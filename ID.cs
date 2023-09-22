@@ -12,7 +12,7 @@ namespace clickerGame2
         {
             new Item(0, "nothing", 0, 0, 0, 0, 0),
             new Item(1, "Wood", 0, 9999, 0, 0, 0),
-            new Item(2, "Copper SHortsword", 10, 1, 0, 0, 0),
+            new Item(2, "Copper Shortsword", 10, 1, 0, 0, 0),
             new Item(3, "Copper Axe", 3, 1, 0, 20, 0),
             new Item(4, "Copper Pickaxe", 3, 1, 20, 0, 0),
             new Item(5, "Workbench", 0, 9999, 0, 0, 0)

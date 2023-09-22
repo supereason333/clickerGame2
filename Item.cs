@@ -8,13 +8,13 @@ namespace clickerGame2
 {
     internal class Item
     {
-        int maxStack = 9999;
-        float damage = 0;
-        int itemID;
-        int pickaxe = 0;
-        int axe = 0;
-        int hammer = 0;
-        string name;
+        public int maxStack = 9999;
+        public float damage = 0;
+        public int itemID;
+        public int pickaxe = 0;
+        public int axe = 0;
+        public int hammer = 0;
+        public string name;
         public Item(int itemID, string name, float damage, int maxStack, int pickaxe, int axe, int hammer)
         {
             this.itemID = itemID;

@@ -13,11 +13,6 @@ namespace clickerGame2
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
 
-            initInventory();
-        }
-        static void initInventory()
-        {
-            Inventory inventory = new Inventory(9);
         }
     }
 }

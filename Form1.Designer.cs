@@ -30,12 +30,18 @@
         {
             panel1 = new Panel();
             mainButton = new Button();
-            hotbarSlotButton1 = new Button();
-            hotbarSlotButton2 = new Button();
-            hotbarSlotButton3 = new Button();
-            hotbarSlotButton4 = new Button();
-            hotbarSlotButton5 = new Button();
+            inventoryListBox = new ListBox();
+            testingPanel = new Panel();
+            label2 = new Label();
+            label1 = new Label();
+            testInvItemIDSelector = new NumericUpDown();
+            testInvSlotSelecter = new NumericUpDown();
+            testInvRMButton = new Button();
+            testInvAddButton = new Button();
             panel1.SuspendLayout();
+            testingPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)testInvItemIDSelector).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)testInvSlotSelecter).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -54,66 +60,98 @@
             mainButton.TabIndex = 0;
             mainButton.Text = "thing idk";
             mainButton.UseVisualStyleBackColor = true;
+            mainButton.Click += mainButton_Click;
             // 
-            // hotbarSlotButton1
+            // inventoryListBox
             // 
-            hotbarSlotButton1.Location = new Point(12, 12);
-            hotbarSlotButton1.Name = "hotbarSlotButton1";
-            hotbarSlotButton1.Size = new Size(71, 60);
-            hotbarSlotButton1.TabIndex = 1;
-            hotbarSlotButton1.Text = "HOtbar1";
-            hotbarSlotButton1.UseVisualStyleBackColor = true;
+            inventoryListBox.FormattingEnabled = true;
+            inventoryListBox.ItemHeight = 15;
+            inventoryListBox.Location = new Point(12, 23);
+            inventoryListBox.Name = "inventoryListBox";
+            inventoryListBox.Size = new Size(193, 364);
+            inventoryListBox.TabIndex = 6;
             // 
-            // hotbarSlotButton2
+            // testingPanel
             // 
-            hotbarSlotButton2.Location = new Point(89, 12);
-            hotbarSlotButton2.Name = "hotbarSlotButton2";
-            hotbarSlotButton2.Size = new Size(71, 60);
-            hotbarSlotButton2.TabIndex = 2;
-            hotbarSlotButton2.Text = "Hotbar2";
-            hotbarSlotButton2.UseVisualStyleBackColor = true;
+            testingPanel.Controls.Add(label2);
+            testingPanel.Controls.Add(label1);
+            testingPanel.Controls.Add(testInvItemIDSelector);
+            testingPanel.Controls.Add(testInvSlotSelecter);
+            testingPanel.Controls.Add(testInvRMButton);
+            testingPanel.Controls.Add(testInvAddButton);
+            testingPanel.Location = new Point(222, 25);
+            testingPanel.Name = "testingPanel";
+            testingPanel.Size = new Size(200, 171);
+            testingPanel.TabIndex = 7;
             // 
-            // hotbarSlotButton3
+            // label2
             // 
-            hotbarSlotButton3.Location = new Point(166, 12);
-            hotbarSlotButton3.Name = "hotbarSlotButton3";
-            hotbarSlotButton3.Size = new Size(71, 60);
-            hotbarSlotButton3.TabIndex = 3;
-            hotbarSlotButton3.Text = "Hotbar3";
-            hotbarSlotButton3.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(144, 48);
+            label2.Name = "label2";
+            label2.Size = new Size(18, 15);
+            label2.TabIndex = 5;
+            label2.Text = "ID";
             // 
-            // hotbarSlotButton4
+            // label1
             // 
-            hotbarSlotButton4.Location = new Point(243, 12);
-            hotbarSlotButton4.Name = "hotbarSlotButton4";
-            hotbarSlotButton4.Size = new Size(71, 60);
-            hotbarSlotButton4.TabIndex = 4;
-            hotbarSlotButton4.Text = "Hotbar4";
-            hotbarSlotButton4.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(144, 19);
+            label1.Name = "label1";
+            label1.Size = new Size(27, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Slot";
             // 
-            // hotbarSlotButton5
+            // testInvItemIDSelector
             // 
-            hotbarSlotButton5.Location = new Point(320, 12);
-            hotbarSlotButton5.Name = "hotbarSlotButton5";
-            hotbarSlotButton5.Size = new Size(71, 60);
-            hotbarSlotButton5.TabIndex = 5;
-            hotbarSlotButton5.Text = "hotbar5?";
-            hotbarSlotButton5.UseVisualStyleBackColor = true;
+            testInvItemIDSelector.Location = new Point(18, 46);
+            testInvItemIDSelector.Name = "testInvItemIDSelector";
+            testInvItemIDSelector.Size = new Size(120, 23);
+            testInvItemIDSelector.TabIndex = 3;
+            // 
+            // testInvSlotSelecter
+            // 
+            testInvSlotSelecter.Location = new Point(18, 17);
+            testInvSlotSelecter.Maximum = new decimal(new int[] { 8, 0, 0, 0 });
+            testInvSlotSelecter.Name = "testInvSlotSelecter";
+            testInvSlotSelecter.Size = new Size(120, 23);
+            testInvSlotSelecter.TabIndex = 2;
+            // 
+            // testInvRMButton
+            // 
+            testInvRMButton.Location = new Point(18, 119);
+            testInvRMButton.Name = "testInvRMButton";
+            testInvRMButton.Size = new Size(75, 23);
+            testInvRMButton.TabIndex = 1;
+            testInvRMButton.Text = "Remove";
+            testInvRMButton.UseVisualStyleBackColor = true;
+            testInvRMButton.Click += testInvRMButton_Click;
+            // 
+            // testInvAddButton
+            // 
+            testInvAddButton.Location = new Point(18, 90);
+            testInvAddButton.Name = "testInvAddButton";
+            testInvAddButton.Size = new Size(75, 23);
+            testInvAddButton.TabIndex = 0;
+            testInvAddButton.Text = "Add";
+            testInvAddButton.UseVisualStyleBackColor = true;
+            testInvAddButton.Click += testInvAddButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1336, 705);
-            Controls.Add(hotbarSlotButton5);
-            Controls.Add(hotbarSlotButton4);
-            Controls.Add(hotbarSlotButton3);
-            Controls.Add(hotbarSlotButton2);
-            Controls.Add(hotbarSlotButton1);
+            Controls.Add(testingPanel);
+            Controls.Add(inventoryListBox);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
             panel1.ResumeLayout(false);
+            testingPanel.ResumeLayout(false);
+            testingPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)testInvItemIDSelector).EndInit();
+            ((System.ComponentModel.ISupportInitialize)testInvSlotSelecter).EndInit();
             ResumeLayout(false);
         }
 
@@ -121,10 +159,13 @@
 
         private Panel panel1;
         private Button mainButton;
-        private Button hotbarSlotButton1;
-        private Button hotbarSlotButton2;
-        private Button hotbarSlotButton3;
-        private Button hotbarSlotButton4;
-        private Button hotbarSlotButton5;
+        private ListBox inventoryListBox;
+        private Panel testingPanel;
+        private Label label2;
+        private Label label1;
+        private NumericUpDown testInvItemIDSelector;
+        private NumericUpDown testInvSlotSelecter;
+        private Button testInvRMButton;
+        private Button testInvAddButton;
     }
 }
